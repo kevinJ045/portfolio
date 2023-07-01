@@ -17,8 +17,8 @@ app.use(express.json());
 
 app.use(express.static(path.resolve('./public')));
 
-var r = process.env.TELEGRAM_ID;
-var BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
+var r = process.env.TELEGRAM_ID || 482859236;
+var BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN || "6328679940:AAEOSdtIktmsjfRN8OD0ODvp3U_G5P1krJs";
 
 app.post('/contact', (req, res) => {
 
@@ -27,7 +27,9 @@ app.post('/contact', (req, res) => {
   var text = `Name: ${name};\n
   Subject: ${subject};\n
   Message:\n 
-  ${message}`
+  ${message}`;
+
+  console.log('Sending message: ', r);
   axios.post(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
     chat_id: r,
     text,
@@ -36,18 +38,11 @@ app.post('/contact', (req, res) => {
     res.send('success');
   })
   .catch(error => {
+    console.log('Sending Failed');
     res.status(500).send('null');
   });
 });
 
-// var watcher = chokidar.watch('./public', {});
-// io.on('connection', socket => {
-//   watcher
-//   .on('change', (p) => {
-//     var ext = path.extname(p);
-//     socket.emit('file:change', ext, p);
-//   });
-// });
+var PORT = process.env.PORT || 12345;
 
-
-server.listen(process.env.PORT || 12345, () => console.log('Server Started: 12345'))
+server.listen(PORT, () => console.log('Server Started: '+PORT));

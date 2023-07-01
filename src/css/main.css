@@ -744,5 +744,10 @@ icon, i.icon {
 		width: 100%;
 	}
 
+	.skills .skill svg{
+		width: 40px;
+		height: 40px;
+	}
+
 
 }
