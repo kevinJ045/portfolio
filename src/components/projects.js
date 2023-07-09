@@ -23,7 +23,7 @@ swipingBar.html(`
             <div class="project-name">Scriff</div>
             <div class="project-tags"><b js></b><b css></b><b html></b><b nodejs></b></div>
             <div class="project-about">A mini Terminal based webOS</div>
-            <a href="https://r921.onrender.com" class="btn btn-primary btn-link">Open</a>
+            <a href="https://scriff.onrender.com" class="btn btn-primary btn-link">Open</a>
         </div>
     </div>
   </div>
