@@ -25,7 +25,8 @@ var BOT_TOKEN = "";
 
 function contact(name, subject, message){
 	if(!name || !subject || !message) return;
-	axios.post('/contact', { name, subject, message}).then(() => {
+	axios.post('/contact', { name, subject, message})
+	.then(() => {
 		$('form').append('<div class="message">Message delivered!</div>');
 	});
 }
