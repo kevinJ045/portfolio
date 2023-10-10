@@ -20,15 +20,24 @@ function firstWordFromId(element, addClass) {
     .substr(originalString.indexOf(" ") + 1);
 }
 
-var r = 456789;
-var BOT_TOKEN = "";
-
 function contact(name, subject, message){
 	if(!name || !subject || !message) return;
-	axios.post('/contact', { name, subject, message})
-	.then(() => {
-		$('form').append('<div class="message">Message delivered!</div>');
+	var text = `Name: ${name};\nSubject: ${subject};\nMessage:\n${message}`;
+	
+	axios.post(`https://api.telegram.org/bot6328679940:AAEOSdtIktmsjfRN8OD0ODvp3U_G5P1krJs/sendMessage`, {
+	  chat_id: 482859236,
+	  text,
+	})
+	.then(response => {
+	  $('form').append('<div class="message">Message delivered!</div>');
+	})
+	.catch(error => {
+	  console.log('Sending Failed');
 	});
+	// axios.post('/contact', { name, subject, message})
+	// .then(() => {
+	// 	$('form').append('<div class="message">Message delivered!</div>');
+	// });
 }
 
 logic.init = () => {
