@@ -3,6 +3,7 @@ import Swiper from "./libs/swiper.js";
 import { pickRandom, randFrom } from "./libs/rand.js";
 import { name } from "./info.js";
 import axios from "axios";
+import { TOKEN } from "./token.js";
 
 const logic = {};
 
@@ -24,7 +25,7 @@ function contact(name, subject, message){
 	if(!name || !subject || !message) return;
 	var text = `Name: ${name};\nSubject: ${subject};\nMessage:\n${message}`;
 	
-	axios.post(`https://api.telegram.org/bot6328679940:AAEOSdtIktmsjfRN8OD0ODvp3U_G5P1krJs/sendMessage`, {
+	axios.post(`https://api.telegram.org/${TOKEN}/sendMessage`, {
 	  chat_id: 482859236,
 	  text,
 	})

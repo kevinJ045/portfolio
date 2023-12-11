@@ -10,6 +10,8 @@ contactme.html(`<div class="row m-5">
 	            <li><a href="https://t.me/bushyice" target="_blank"><i class="icon telegram"></i>Telegram: @bushyice</a></li>
 	            <li><a href="https://instagram.com/bushyice" target="_blank"><i class="icon insta"></i>Instagram: @bushyice</a></li>
 	            <li><a href="https://github.com/kevinj045" target="_blank"><i class="icon git"></i>Github: /kevinj045</a></li>
+	            
+	            <li><a href="https://makano.vercel.app" target="_blank"><i class="icon logo"></i>My Archive</a></li>
 	            <li><a href="http://127.0.0.1" target="_blank">My IP: 127.0.0.1 :)</a></li>
 
 	        </ul>

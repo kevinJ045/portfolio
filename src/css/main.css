@@ -455,6 +455,10 @@ icon.insta, i.icon.insta {
     background: url(https://instagram.com/favicon.ico);
 }
 
+icon.logo, i.icon.logo {
+    background: url(https://makano.vercel.app/icon.svg);
+}
+
 icon.git, i.icon.git {
 	filter: brightness(100);
     background: url(https://github.com/favicon.ico);
